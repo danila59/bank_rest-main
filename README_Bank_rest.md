@@ -10,7 +10,7 @@ Backend-приложение на Java Spring Boot для управления �
 ### 1. Клонирование проекта
 
 ```bash
-git clone https://github.com/danila59/bank-rest-main.git
+git clone https://github.com/danila59/bank_rest-main.git
 cd bank-rest-main
 ```
 
@@ -318,7 +318,7 @@ curl -X POST http://localhost:8080/api/transactions/transfer \
 ## Установка для разработки
 
 ```bash
-git clone https://github.com/danila59/bank-rest-main.git
+git clone https://github.com/danila59/bank_rest-main.git
 cd bank-rest-main
 
 mvn clean install
