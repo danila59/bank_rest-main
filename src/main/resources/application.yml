@@ -1,0 +1,69 @@
+spring:
+  application:
+    name: bank-rest-api
+  
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:postgres}:${DB_PORT:5432}/${DB_NAME:bank_db}
+    username: ${DB_USERNAME:bank_user}
+    password: ${DB_PASSWORD:bank_password}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 30000
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        jdbc:
+          batch_size: 20
+    show-sql: false
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    enabled: true
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    operations-sorter: method
+    tags-sorter: alpha
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXowMTIzNDU2Nzg5}
+    expiration: 86400000
+
+  encryption:
+    secret-key: ${ENCRYPTION_SECRET:Kk7T4vX9Y2z6B8Q1w3e5r7t9y1u3i5o7p}
+    algorithm: AES/CBC/PKCS5Padding
+
+  card:
+    mask-pattern: "**** **** **** %s"
+    number-length: 16
+
+logging:
+  level:
+    com.example.bankcards: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate.SQL: false
+    org.springdoc: DEBUG
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev

@@ -1,0 +1,152 @@
+# db/changelog/002-insert-test-data.yaml
+databaseChangeLog:
+  # Тестовые пользователи
+  - changeSet:
+      id: 004-insert-admin-user
+      author: system
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: admin
+              - column:
+                  name: password
+                  value: $2a$10$3rO2iOR7chDI2v81TooeyeISaPU0c8IyJP9W4MKZkmzD0IeU1nt0m #admin123
+              - column:
+                  name: first_name
+                  value: Admin
+              - column:
+                  name: last_name
+                  value: User
+              - column:
+                  name: email
+                  value: admin@bank.com
+              - column:
+                  name: role
+                  value: ADMIN
+              - column:
+                  name: enabled
+                  value: true
+              - column:
+                  name: created_at
+                  value: now()
+              - column:
+                  name: updated_at
+                  value: now()
+
+  - changeSet:
+      id: 005-insert-test-user
+      author: system
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: testuser
+              - column:
+                  name: password
+                  value: $2a$10$vxxRZFEw8Ge/GU2SfW/lQ.Wm.EaZL5iecxNjDFZK0YYiim3h1GGny #password
+              - column:
+                  name: first_name
+                  value: Test
+              - column:
+                  name: last_name
+                  value: User
+              - column:
+                  name: email
+                  value: user@bank.com
+              - column:
+                  name: role
+                  value: USER
+              - column:
+                  name: enabled
+                  value: true
+              - column:
+                  name: created_at
+                  value: now()
+              - column:
+                  name: updated_at
+                  value: now()
+
+  - changeSet:
+      id: 006-insert-test-cards-for-testuser
+      author: system
+      changes:
+        # Карта 1 для testuser
+        - insert:
+            tableName: cards
+            columns:
+              - column:
+                  name: card_number
+                  value: '4149471805568597'  # номер карты
+              - column:
+                  name: card_number_hash
+                  value: "8c46ed0fa8938ae40050f9af0ba2cb666f1096ac72f1293930909741f63e5729"
+              - column:
+                  name: masked_number
+                  value: '**** **** **** 8597'
+              - column:
+                  name: owner_name
+                  value: 'TEST USER'
+              - column:
+                  name: expiry_date
+                  valueDate: '2028-12-31'
+              - column:
+                  name: cvv
+                  value: "XE69e5SWcT2dSWW7o4WfS2fss9wRFFaz0qikgPJlYKY="
+              - column:
+                  name: balance
+                  valueNumeric: "5000.00"
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: user_id
+                  valueComputed: (SELECT id FROM users WHERE username = 'testuser')
+              - column:
+                  name: created_at
+                  value: now()
+              - column:
+                  name: updated_at
+                  value: now()
+
+        # Карта 2 для testuser
+        - insert:
+            tableName: cards
+            columns:
+              - column:
+                  name: card_number
+                  value: '4149476684550065'
+              - column:
+                  name: card_number_hash
+                  value: "742ded529d281989866b6d67c89c07e5eb3e37c9c8e22eea02baf320ada618e2"
+              - column:
+                  name: masked_number
+                  value: '**** **** **** 0065'
+              - column:
+                  name: owner_name
+                  value: 'TEST USER'
+              - column:
+                  name: expiry_date
+                  valueDate: '2029-06-30'
+              - column:
+                  name: cvv
+                  value: "1m0c5Ow0uLksqFupI0kCvk4ceACJGAnZ+sOBFWyr3js="
+              - column:
+                  name: balance
+                  valueNumeric: "3000.00"
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: user_id
+                  valueComputed: (SELECT id FROM users WHERE username = 'testuser')
+              - column:
+                  name: created_at
+                  value: now()
+              - column:
+                  name: updated_at
+                  value: now()

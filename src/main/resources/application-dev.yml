@@ -1,0 +1,56 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5433}/bank_db
+    username: ${DB_USERNAME:bank_user}
+    password: ${DB_PASSWORD:bank_password}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 30000
+      initialization-fail-timeout: 0
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        use_sql_comments: true
+        jdbc:
+          batch_size: 20
+    hibernate:
+      ddl-auto: validate
+
+  liquibase:
+    enabled: true
+    drop-first: false
+    contexts: dev
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    default-schema: public
+
+server:
+  port: 8080
+  servlet:
+   context-path: /api
+
+logging:
+  level:
+    com.example.bankcards: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springdoc: DEBUG
+    liquibase: DEBUG
+
+
+  file:
+    name: logs/app-dev.log
+
+  logback:
+    rolling policy:
+      max-file-size: 10MB
+      max-history: 7
+
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    console: "%d{HH:mm:ss} %-5level %logger{36} - %msg%n"

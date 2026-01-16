@@ -1,0 +1,31 @@
+2026-01-16 07:13:03 [main] INFO  com.example.BankRestApplication - Starting BankRestApplication v1.0.0 using Java 17.0.17 with PID 1 (/app/app.jar started by spring in /app)
+2026-01-16 07:13:03 [main] INFO  com.example.BankRestApplication - The following 1 profile is active: "dev"
+2026-01-16 07:13:06 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-16 07:13:06 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 369 ms. Found 3 JPA repository interfaces.
+2026-01-16 07:13:11 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-16 07:13:11 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-16 07:13:11 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-01-16 07:13:11 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2026-01-16 07:13:11 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 7384 ms
+2026-01-16 07:13:11 [main] DEBUG liquibase.servicelocator - Loaded liquibase.configuration.AutoloadedConfigurations instance liquibase.GlobalConfiguration
+2026-01-16 07:13:11 [main] DEBUG liquibase.servicelocator - Loaded liquibase.configuration.AutoloadedConfigurations instance liquibase.integration.commandline.LiquibaseCommandLineConfiguration
+2026-01-16 07:13:11 [main] DEBUG liquibase.servicelocator - Loaded liquibase.configuration.AutoloadedConfigurations instance liquibase.logging.core.DefaultLoggerConfiguration
+2026-01-16 07:13:11 [main] DEBUG liquibase.servicelocator - Loaded liquibase.configuration.AutoloadedConfigurations instance liquibase.sql.SqlConfiguration
+2026-01-16 07:13:11 [main] DEBUG liquibase.servicelocator - Loaded liquibase.configuration.AutoloadedConfigurations instance liquibase.parser.ChangeLogParserConfiguration
+2026-01-16 07:13:11 [main] DEBUG liquibase.configuration - Found ConfigurationDefinitions in liquibase.GlobalConfiguration
+2026-01-16 07:13:11 [main] DEBUG liquibase.configuration - Found ConfigurationDefinitions in liquibase.integration.commandline.LiquibaseCommandLineConfiguration
+2026-01-16 07:13:11 [main] DEBUG liquibase.configuration - Found ConfigurationDefinitions in liquibase.logging.core.DefaultLoggerConfiguration
+2026-01-16 07:13:11 [main] DEBUG liquibase.configuration - Found ConfigurationDefinitions in liquibase.sql.SqlConfiguration
+2026-01-16 07:13:11 [main] DEBUG liquibase.configuration - Found ConfigurationDefinitions in liquibase.parser.ChangeLogParserConfiguration
+2026-01-16 07:13:11 [main] DEBUG liquibase.servicelocator - Loaded liquibase.configuration.ConfigurationValueProvider instance liquibase.configuration.core.DeprecatedConfigurationValueProvider
+2026-01-16 07:13:11 [main] DEBUG liquibase.servicelocator - Loaded liquibase.configuration.ConfigurationValueProvider instance liquibase.configuration.core.SystemPropertyValueProvider
+2026-01-16 07:13:11 [main] DEBUG liquibase.servicelocator - Loaded liquibase.configuration.ConfigurationValueProvider instance liquibase.configuration.core.ScopeValueProvider
+2026-01-16 07:13:11 [main] DEBUG liquibase.servicelocator - Loaded liquibase.configuration.ConfigurationValueProvider instance liquibase.configuration.core.EnvironmentValueProvider
+2026-01-16 07:13:11 [main] DEBUG liquibase.servicelocator - Loaded liquibase.logging.LogService instance liquibase.logging.core.BufferedLogService
+2026-01-16 07:13:11 [main] DEBUG liquibase.servicelocator - Loaded liquibase.logging.LogService instance liquibase.logging.core.CompositeLogService
+2026-01-16 07:13:11 [main] DEBUG liquibase.servicelocator - Loaded liquibase.logging.LogService instance liquibase.logging.core.JavaLogService
+2026-01-16 07:13:11 [main] DEBUG liquibase.servicelocator - Loaded liquibase.servicelocator.ServiceLocator instance liquibase.servicelocator.StandardServiceLocator
+2026-01-16 07:13:11 [main] DEBUG liquibase.configuration - No configuration value for liquibase.shouldRun aka should.run found
+2026-01-16 07:13:11 [main] DEBUG liquibase.configuration - Configuration liquibase.shouldRun is using the default value of true
+2026-01-16 07:13:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-16 07:13:16 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
